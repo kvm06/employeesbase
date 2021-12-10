@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} Список сотрудников {% endblock %}
+
+{% block content %}
+    <a href="{% url 'add' %}">Добавить сотрудника</a>
+    <table>
+        <caption>Список сотрудников</caption>
+        <thead>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Возраст</th>
+            <th>Отдел</th>
+            <th>Язык</th>
+        </thead>
+        {% for emp in employees %}
+        <tr>
+            <td>{{emp.first_name}}</td>
+            <td>{{emp.last_name}}</td>
+            <td>{{emp.age}}</td>
+            <td>{{emp.department}}</td>
+            <td>{{emp.prog_language}}</td>
+            <td>
+                <a href="{% url 'edit' emp.id %}">Изменить</a><br>
+                <a href="{% url 'delete' emp.id %}" onclick="return confirm('Are you sure?')">Удалить</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'add_department' %}">Добавить отдел</a>
+    <a href="{% url 'add_language' %}">Добавить язык программирования</a>
+{% endblock %}

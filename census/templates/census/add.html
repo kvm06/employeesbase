@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" action="{% url 'add' %}">
+    <h1>Добавление сотрудника</h1>
+    <div class="add_employee">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Добавить</button>
+        <a href="{% url 'list' %}">Отмена</a>
+    </div>
+</form>
+{% endblock %}
+
+

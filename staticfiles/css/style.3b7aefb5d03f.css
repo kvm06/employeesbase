@@ -1,0 +1,22 @@
+table {
+    border-collapse: collapse;
+}
+td, th{
+    padding: 5px;
+    border:1px solid black;
+}
+
+.add_employee, .edit_employee {
+    border: 1px solid black;
+    width: 400px;
+}
+
+.add_employee label, .edit_employee label {
+    display: inline-block;
+    width: 45%;
+    text-align: end;
+}
+
+.add_employee input, .edit_employee input, select {
+    display: inline-block;
+    width: 45%;

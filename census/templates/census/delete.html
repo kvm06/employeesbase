@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %} Удаление сотрудника {% endblock %}
+{% block content %}
+<form method="POST" action="{% url 'edit' employee_id=form.instance.id %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" >Сохранить</button>
+    <a href="#">Отмена</a>
+</form>
+{% endblock %}

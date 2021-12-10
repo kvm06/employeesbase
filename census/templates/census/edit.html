@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} Изменение данных сотрудника {% endblock %}
+{% block content %}
+<h1>Изменение данных сотрудника</h1>
+<div class="edit_employee">
+    <form method="POST" action="{% url 'edit' employee_id=form.instance.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" >Сохранить</button>
+        <a href="{% url 'list' %}">Отмена</a>
+    </form>
+</div>
+{% endblock %}
